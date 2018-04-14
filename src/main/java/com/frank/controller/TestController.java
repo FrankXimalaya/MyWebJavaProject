@@ -28,9 +28,9 @@ public class TestController {
     @ResponseBody
     public Map firstTest(){
 
-        User user = new User();
-        user.setName("frank");
-        mapper.insertUser(user);
+//        User user = new User();
+//        user.setName("frank");
+//        mapper.insertUser(user);
 
 
         Map map = new HashMap();
