@@ -23,7 +23,7 @@ public class Receiver {
         channel.queueDeclare(QUEUE_NAME, false, false, false, null);
         System.out.println(" [*] Waiting for messages. To exit press CTRL+C");
         
-        // channel.basicQos(1);//使得每个Consumer在同一个时间点最多处理一个Message。在接收到该Consumer的ack前，不会将新的Message分发给它
+         channel.basicQos(1);//使得每个Consumer在同一个时间点最多处理一个Message。在接收到该Consumer的ack前，不会将新的Message分发给它
         
         
         com.rabbitmq.client.Consumer consumer = new DefaultConsumer(channel) {
@@ -36,10 +36,18 @@ public class Receiver {
                 }
                 String message = new String(body, "UTF-8");
                 System.out.println(" [x] Received '" + message + "'");
+                //发生异常
+                System.out.println("开始发生异常===========");
+                String s = null;
+                if(true){
+                		s.toString();
+                }
                 channel.basicAck(envelope.getDeliveryTag(), false);
             }
         };
-        channel.basicConsume(QUEUE_NAME, false, consumer);
+        
+        channel.basicConsume(QUEUE_NAME, false, consumer);	
+        
         
 
     }
