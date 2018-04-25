@@ -18,6 +18,8 @@ public class TestController {
     @Autowired
     private UserMapper mapper;
     
+//    public static 
+    
    
 
     @RequestMapping("/firstTest")
