@@ -7,7 +7,6 @@ import javax.annotation.PostConstruct;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.BeanFactory;
 import org.springframework.beans.factory.BeanFactoryAware;
-import org.springframework.beans.factory.BeanNameAware;
 import org.springframework.beans.factory.config.BeanPostProcessor;
 import org.springframework.stereotype.Service;
 
@@ -16,9 +15,10 @@ import com.frank.invocationHandler.LogHandler;
 import com.frank.service.TestService;
 
 @Service
-public class PostProcessor implements BeanPostProcessor{
+public class PostProcessor implements BeanPostProcessor,BeanFactoryAware{
 
 	
+	private BeanFactory beanFactory;
 	
 	
 	@PostConstruct
@@ -53,6 +53,12 @@ public class PostProcessor implements BeanPostProcessor{
 		}else{
 			return bean;	
 		}
+	}
+
+
+	@Override
+	public void setBeanFactory(BeanFactory beanFactory) throws BeansException {
+		this.beanFactory = beanFactory;
 	}
 
 }

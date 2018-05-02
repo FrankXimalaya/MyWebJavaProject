@@ -21,7 +21,7 @@ public abstract class AbstractTest implements Itest{
 
 		public AbstractTestImpl() {
 			
-			System.out.println("spring 开始");
+			System.out.println("spring 开始,抽象类居然运行了");
 		}
 		
 
