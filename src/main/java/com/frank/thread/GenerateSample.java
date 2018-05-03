@@ -14,8 +14,8 @@ public class GenerateSample {
 		try {
 			writer = new FileWriter(f, false);
 			Random random1 = new Random(10);
-			for (int i = 0; i < 10000000; i++) {
-				writer.write(String.valueOf(random1.nextInt(20000)));
+			for (int i = 0; i < 100000000; i++) {
+				writer.write(String.valueOf(random1.nextInt(200000)));
 				writer.write("\r\n");
 			}
 			writer.close();

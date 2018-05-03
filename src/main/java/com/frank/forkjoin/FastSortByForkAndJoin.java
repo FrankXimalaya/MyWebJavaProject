@@ -1,4 +1,4 @@
-package com.frank.thread;
+package com.frank.forkjoin;
 
 import java.io.BufferedReader;
 import java.io.File;
