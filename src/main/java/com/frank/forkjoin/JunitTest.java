@@ -41,10 +41,29 @@ public class JunitTest {
 		 System.out.println("消耗时间为--"+String.valueOf(endTime-startTime));
 	}
 	
+	@Test
+	public void joinTest() throws InterruptedException{
+		
+		int a = 100_200;
+		System.out.println(a);
+		
+//		Thread thread = new Thread(new Runnable(
+//				) {
+//			
+//			@Override
+//			public void run() {
+//				System.out.println("hello");
+//				try {
+//					Thread.sleep(10000);
+//				} catch (InterruptedException e) {
+//					// TODO Auto-generated catch block
+//					e.printStackTrace();
+//				}
+//			}
+//		});
+//		thread.start();
+//		thread.join();
+//		System.out.println("终于等到别人睡觉睡完了");
+	}
 	
-	
-	
-	
-	
-
 }
