@@ -1,5 +1,7 @@
 package com.frank.forkjoin;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ForkJoinPool;
 import java.util.concurrent.ForkJoinTask;
@@ -64,6 +66,22 @@ public class JunitTest {
 //		thread.start();
 //		thread.join();
 //		System.out.println("终于等到别人睡觉睡完了");
+	}
+	
+	
+	
+	
+	@Test
+	public void wordOccruenceTest() throws IOException{
+		
+		
+		FolderSearchTask task = new FolderSearchTask(Folder.fromDirectory(new File("C:\\Users\\zy\\Desktop\\Test")), "人");
+		
+		ForkJoinPool pool = new ForkJoinPool();
+		Long count = pool.invoke(task);
+		
+		System.out.println("出现【人】的个数是"+count);
+		
 	}
 	
 }
