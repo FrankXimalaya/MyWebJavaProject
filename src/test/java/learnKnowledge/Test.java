@@ -15,6 +15,12 @@ public class Test  {
 		System.out.println("熊猫烧香");
 		
 	}
+	
+	public static void main(String[] args) {
+		
+		System.out.println("测试测测试--------");
+		
+	}
 
 	
 	
